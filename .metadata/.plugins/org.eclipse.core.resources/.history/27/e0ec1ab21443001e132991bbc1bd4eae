@@ -1,0 +1,23 @@
+package com.example.springweb;
+
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FunctionProgrammingConceptsApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FunctionProgrammingConceptsApplication.class, args);
+		
+		int a[]=new int[]{20,13,16,11} ; 
+		
+		List<int[]> numbers=Arrays.asList(a);
+		System.out.println("Numbers are " +numbers);
+		
+	}
+
+}

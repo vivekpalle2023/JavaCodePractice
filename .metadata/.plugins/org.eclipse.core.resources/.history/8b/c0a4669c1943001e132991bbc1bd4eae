@@ -1,0 +1,47 @@
+package com.example.springweb;
+
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.ArrayList;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FunctionProgrammingConceptsApplication{
+
+	public static void main(String[] args) {
+		SpringApplication.run(FunctionProgrammingConceptsApplication.class, args);
+		
+			
+		List<Integer> numbers=Arrays.asList(new Integer[]{20,13,16,11});
+
+	Predicate<Integer> p=new Predicate<>() {
+		public boolean test(Integer even_no) {
+			return false;
+		}
+		
+	};
+		
+		System.out.println("Numbers are " +getEvenNumbers(numbers, p));
+		
+		
+		
+		
+	}
+	
+	public static List<Integer> getEvenNumbers(List<Integer> numbers, Predicate<Integer> p1){
+		
+		List<Integer> result=new ArrayList<>();
+		for(int even_no: numbers) {
+			if(p1.test(even_no)) {
+				result.add(even_no);
+			}
+		}
+		return result; 
+		
+	}
+
+}

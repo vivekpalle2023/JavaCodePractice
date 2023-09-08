@@ -1,0 +1,21 @@
+package com.example.springweb;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.ArrayList;
+
+public class Sample_for_stream {
+	public static void main(String[] args) {
+		List<Integer> a=new ArrayList<>();
+		
+		a.add(2);
+		a.add(6);
+		a.add(3);
+		a.add(5);
+		a.add(9);
+		
+		System.out.println(a.stream().filter(b-> b>3).collect(Collectors.toList()));
+		
+		
+	}
+
+}

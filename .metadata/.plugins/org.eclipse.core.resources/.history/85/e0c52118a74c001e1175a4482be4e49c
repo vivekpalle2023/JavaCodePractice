@@ -1,0 +1,16 @@
+package com.example.springweb;
+
+
+public class Ex_String_SB_SB {
+	
+	public static void main (String args[]) {
+		
+StringBuffer SB=new StringBuffer("Vivek");
+System.out.println(SB.reverse());
+
+String s1="this is javatpoint";
+System.out.println(s1.toUpperCase());
+
+	}
+
+}

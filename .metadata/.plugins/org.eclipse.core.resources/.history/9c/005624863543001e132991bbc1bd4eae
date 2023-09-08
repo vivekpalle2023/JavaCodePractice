@@ -1,0 +1,31 @@
+package com.example.springweb;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class MethodReference_Ex {
+	
+	public static void main(String[] args) {
+		
+		List<String> menu=new ArrayList<>();
+		
+		menu.add("veg");
+		menu.add("non-veg");
+		menu.add("veg");
+		menu.add("veg");
+		menu.add("non-veg");
+		menu.add("non-veg");
+		
+		Iterator<String> iterator=menu.iterator();
+		while(iterator.hasNext()){
+			String menuNext=iterator.next();
+			if(menuNext.equals("non-veg")) {
+				iterator.remove();
+			}
+					}
+		System.out.println(menu);
+	}
+	
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;com.example.springweb.product&apos; to &apos;productrestapi/src/main/resources&apos;&#x0D;&#x0A;- Original project: &apos;productrestapi&apos;&#x0D;&#x0A;- Destination element: &apos;productrestapi/src/main/resources&apos;&#x0D;&#x0A;- Original element: &apos;productrestapi/src/main/java/com.example.springweb.product&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="/src\/main\/resources=/maven.pomderived=/true=/" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.springweb.product" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1686676400252" version="1.0"/>
+</session>
