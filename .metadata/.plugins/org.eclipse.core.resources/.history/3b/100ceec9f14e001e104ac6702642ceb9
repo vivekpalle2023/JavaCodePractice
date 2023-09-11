@@ -1,0 +1,20 @@
+package com.example.springweb;
+
+import java.util.Set;
+import java.util.HashSet;
+
+public class Ex_HashSet {
+	
+	public static void main(String args[]) {
+		
+		Set<Employee> s1=new HashSet<>();
+		
+		s1.add(new Employee("Aplha", "4"));
+		s1.add(new Employee("Vivek", "1"));
+		
+		s1.forEach(a -> System.out.println(a.name + " " + a.id));
+		
+		
+	}
+
+}

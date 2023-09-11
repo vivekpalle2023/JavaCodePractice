@@ -1,0 +1,21 @@
+package com.example.springweb;
+
+import java.util.Set;
+import java.util.HashSet;
+package com.example.springweb.Ex_LinkedList;
+
+public class Ex_HashSet {
+	
+	public static void main(String args[]) {
+		
+		Set<Employee> s1=new HashSet<>();
+		
+		s1.add(new Employee("Aplha", "4"));
+		s1.add(new Employee("Vivek", "1"));
+		
+		s1.forEach(ll);
+		
+		
+	}
+
+}

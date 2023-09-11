@@ -1,0 +1,29 @@
+package com.example.springweb;
+
+import java.util.List;
+import java.util.Collections;
+import java.util.LinkedList;
+
+public class Ex_LinkedList {
+	
+	public static void main(String args[]) {
+		
+		
+		String[] familyArray= {"Bro", "Mom", "Dad", "Spouce","Child"};
+		
+		List<String> fL=new LinkedList<>();
+		
+		for(int i=0;i<familyArray.length;i++) {
+			
+			fL.add(familyArray[i]);
+		}
+		Collections.sort(fL);
+		
+		fL.set(3, "Sis");
+		fL.
+		System.out.println(fL);
+
+	}
+	}
+
+

@@ -1,0 +1,36 @@
+package com.example.springweb;
+
+class Child extends Parent 
+{
+		
+	public void A()
+	{
+		System.out.println("In Child, Method A");
+	}
+	public void B()
+	{
+		System.out.println("In Child, Method B");
+	}
+
+}
+
+class Parent  //parent
+{
+	
+	public void A()
+	{
+		System.out.println("In Parent, Method A ");
+	}
+	
+}
+
+public class Ex_Inheritance
+{
+	public static void main(String args[]) {
+		
+		Parent p=new Child(); //upCasting
+		
+		p.A();
+	}
+}
+

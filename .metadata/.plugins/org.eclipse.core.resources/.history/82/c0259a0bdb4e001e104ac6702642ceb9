@@ -1,0 +1,61 @@
+package com.example.springweb;
+
+import java.util.List;
+import java.util.LinkedList;
+
+class Employee {
+
+	String name;
+	String id;
+
+	Employee(String name, String id) {
+		this.name = name;
+		this.id = id;
+	}
+
+}
+
+public class Ex_LinkedList {
+
+	public static void main(String args[]) {
+
+		String[][] employeeArray = { { "Vivek", "1" }, { "Sree", "2" }, { "Ivan", "3" } };
+		List<Employee> fL=new LinkedList<>();
+
+		// employeeArray.length - row length
+		// employeeArray[0].length - column length
+		
+		String name_temp=" "; 
+		String id_temp=" ";
+
+		for (int i = 0; i < employeeArray.length; i++) // rows
+		{
+			for (int j = 0; j < employeeArray[i].length; j++) // columns
+			{
+			if (j==0) {
+				name_temp=employeeArray[i][j];
+			}
+			else {
+				id_temp=employeeArray[i][j];
+			}
+			System.out.println(employeeArray[i][j]);
+			}
+			fL.add(new Employee(name_temp,id_temp));
+		}
+     
+		System.out.println(fL);
+	
+
+		/*
+		 * for(int i=0;i<familyArray.length;i++) {
+		 * 
+		 * fL.add(familyArray[i]); } //Collections.sort(fL);
+		 * 
+		 * fL.add(3, "Sis"); List<String> fT=new LinkedList<>(); fT.addAll(fL.subList(0,
+		 * 4));
+		 * 
+		 * System.out.println(fL); System.out.println(fT);
+		 */
+
+	}
+}

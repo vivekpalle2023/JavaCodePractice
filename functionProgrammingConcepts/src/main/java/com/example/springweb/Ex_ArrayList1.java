@@ -35,7 +35,6 @@ public class Ex_ArrayList1 {
 		 */
 		//Collections.sort((List<T>) s1); //not working
 		
-		//using forEach method and Lambda expression
 	
 		//Inserting at position 1
 		s1.add(1,new Student("B",101,7));
@@ -52,6 +51,7 @@ public class Ex_ArrayList1 {
 		
 		//s1.isEmpty() checks if the List is empty or not and returns boolean output
 		if(!s1.isEmpty()) {
+			//using forEach method and Lambda expression
 		s1.forEach(a->
 		{System.out.println(a.studentName +" with roll no "+ a.rollNo+ " is of Age "+ a.age);});
 		}

@@ -2,6 +2,7 @@ package com.example.springweb;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class Ex_ArrayList {
@@ -13,6 +14,7 @@ public class Ex_ArrayList {
 		l.add("A");
 		l.add("B");
 
+	
 		System.out.println(l);
 
 		// converting List to Array

@@ -49,7 +49,7 @@ public class Sample {
 		a.add("Sateesh");
 		a.add("Firoz");
 		a.add("Sindhuja");
-		int count=(int) a.stream().count();
+		int count=a.size();
       
 	 
 		for(Map.Entry m:  AssigningShift(count,a).entrySet()) {
