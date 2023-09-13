@@ -3,7 +3,7 @@ package com.example.springweb;
 import java.util.List;
 import java.util.ArrayList;
 
-class Student{
+class Student implements Comparable<Student>{
 	
 	String studentName;
 	int rollNo;
@@ -15,6 +15,18 @@ class Student{
 		this.rollNo=rollNo;
 		this.age=age;
 	}
+
+	public int compareTo(Student o) {
+	
+		if(this.rollNo>o.rollNo) {
+			return 1;
+		}
+		else return -1;
+		 
+	}
+
+	
+
 	
 }
 

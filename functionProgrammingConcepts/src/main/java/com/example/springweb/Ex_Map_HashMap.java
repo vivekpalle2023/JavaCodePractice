@@ -1,87 +1,109 @@
 package com.example.springweb;
 
 import java.util.Map;
-import java.util.Comparator;
-import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Collections;
 
-class Employees{
-	
+class Employees {
+
 	int empId;
 	String employeeName;
 	String baseShift;
-		
-	Employees(int empId, String employeeName, String baseShift){
-		
-		this.empId=empId;
-		this.employeeName=employeeName;
-		this.baseShift=baseShift;
+
+	Employees(int empId, String employeeName, String baseShift) {
+
+		this.empId = empId;
+		this.employeeName = employeeName;
+		this.baseShift = baseShift;
 	}
-	
+
 }
 
 public class Ex_Map_HashMap {
-	
-	static int randomGenerator()
-	{
-		int randomNumber=(int) (Math.random()*100);
+
+	static int randomGenerator() {
+		int randomNumber = (int) (Math.random() * 100);
 		return randomNumber;
 	}
-	
-	static List<Employees> employeeList()
-	{
-		List<Employees> l=new ArrayList<>();
-		l.add(new Employees(1,"A",null));
-		l.add(new Employees(2,"B",null));
-		l.add(new Employees(3,"C",null));
-		l.add(new Employees(4,"D",null));
-		l.add(new Employees(5,"E",null));
-		l.add(new Employees(6,"F",null));
+
+	static List<Employees> employeeList() {
+		List<Employees> l = new ArrayList<>();
+		l.add(new Employees(1, "A", null));
+		l.add(new Employees(2, "B", null));
+		l.add(new Employees(3, "C", null));
+		l.add(new Employees(4, "D", null));
+		l.add(new Employees(5, "E", null));
+		l.add(new Employees(6, "F", null));
 		return l;
+
+	}
+	
+	static Map<Integer, Employees> randomEmployeeMapping() {
 		
+		Map<Integer, Employees> m = new TreeMap<Integer, Employees>();
+		Iterator<Employees> i = employeeList().iterator();
+		int p = 0;
+		while (i.hasNext()) {
+			Employees e = i.next();
+			int r = randomGenerator();
+			while (p == r) {
+				int temp = randomGenerator();
+				r = temp;
+			}
+			p = r;
+			m.put(r, e);
+		}
+		return m;
 	}
 
-
 	public static void main(String[] args) {
-		
 
-		Map<Integer, Employees> m = new HashMap<Integer, Employees>();
-		Iterator<Employees> i=employeeList().iterator();
-		
-		while(i.hasNext()) {
-			Employees e=i.next();
-		m.put(randomGenerator(), e);
-				
-		//System.out.println(e.empId + " " + e.employeeName + " " + e.baseShift );
-				}	
-
-		
-		//Entry is a sub interface which has getKey() and getValue() methods
-		//need to convert to Set using the entrySet() method
-		//passing the set value to Entry to traverse and retrieve key and value separately
-
-		
-		  for (Map.Entry<Integer,Employees> s : m.entrySet()) { 
+	
+		int mse=2;
+		int ase=2;
+		int nse=2;
+		// Entry is a sub interface of HashMap which has getKey() and getValue() methods
+		// need to convert to Set using the entrySet() method
+		// passing the set value to Entry to traverse and retrieve key and value
+		// separately
+	
+		for (Map.Entry<Integer, Employees> s : randomEmployeeMapping().entrySet()) {
+			Employees e = s.getValue();
+		        if(mse!=0) {
+				e.baseShift="Morning";
 			
-			  
-			  System.out.println(  s.getKey() + " " + s.getValue().empId 
-					  +  " " +s.getValue().employeeName +
-					  " "+ s.getValue().baseShift );
-			  }
-		 
+				mse--;
+		        }
+		        else if(ase!=0) {
+		        	e.baseShift="Afternoon";
+		        	ase--;
+		        }
+		        else if(nse!=0) {
+		        	e.baseShift="Night";
+		        	nse--;
+		        }
+			System.out.println(s.getKey() + " = " + e.empId + " - " + e.employeeName + " - " + e.baseShift + " Shift");
+			
+			for(int i=0;i<employeeList().size();i++) {
+			if (employeeList().get(i).empId ==e.empId) {
+				employeeList().set(i, new Employees(e.empId,e.employeeName,e.baseShift));
+			}
+			}
+			
+		}
 		
-		//m.replace(1, "A");
-		//m.replaceAll((k,v)->"V");
-		
+		employeeList().forEach(c->System.out.println(c.empId + " " + c.employeeName+ " " + c.baseShift));
+
+		// m.replace(1, "A");
+		// m.replaceAll((k,v)->"V");
+
 		/*
 		 * m.entrySet() .stream()
 		 * .sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
 		 * .forEach(System.out::println);
 		 */
-		
 
 	}
 
