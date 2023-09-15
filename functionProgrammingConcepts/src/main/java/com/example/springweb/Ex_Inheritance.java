@@ -27,6 +27,10 @@ class Parent
 		//throw new IOException("Method A exception");
 
 	}
+	public void C()
+	{
+		System.out.println("In Parent, Method C ");
+	}
 }
 
 public class Ex_Inheritance {

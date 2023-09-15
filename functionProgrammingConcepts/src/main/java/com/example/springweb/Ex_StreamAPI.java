@@ -5,6 +5,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.ArrayList;
 import java.util.*;
+	import java.util.stream.IntStream;
+	import java.util.stream.Stream;
+
 
 class WorkDistribution{
 	
@@ -24,11 +27,12 @@ class WorkDistribution{
 
 public class Ex_StreamAPI {
 	
+	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String[] args) {
 		
 		List<WorkDistribution> wd=new ArrayList<>();
 		wd.add(new WorkDistribution(100,200,150,"June"));
-		wd.add(new WorkDistribution(200,100,80,"August"));
+		wd.add(new WorkDistribution(100,109,150,"July"));
 		wd.add(new WorkDistribution(300,500,200,"September"));
 		
 		List<String> wd1=wd.stream()
@@ -61,8 +65,53 @@ public class Ex_StreamAPI {
 				}
 				
 			}
+		 wd.stream().limit(2).forEach(w->System.out.println(w.month));
+		 
+		 wd.stream().skip(2).forEach(w->System.out.println(w.month));
+		 
+		 
+	//Verifying the Palindrome for string
+		 
+		 StringBuilder str=new StringBuilder("1101");
+		  String str1=str.toString();
+		  str.reverse();
+		   		 
+		 System.out.println(str1.equals(str.toString()));
+		 
+		 if(str1.equals(str.toString()))
+		 {
+			 System.out.println("It is a Palindrome");
+		 }
+		 else {
+			 System.out.println("Not a Palindrome");
+		 }
+		 
+		 
+		 //using sum in Array stream
+		 int[] a= {2,10,3,7,1,6};
+
+   int total=Arrays.stream(a).sum();
+   	 for(int i=0;i<a.length;i++) {
+   		 a[i]=total-a[i];
+   	     }
+   	 for(int j:a) {
+   		System.out.println(j);
+   		    	 }
+   	 
+ 	System.out.println( Arrays.stream(a).max());
 			
-		
+ 	
+ 	  
+		Stream<double[]> HackValue = IntStream.rangeClosed(1, 100)
+ 	    .boxed().flatMap(x ->IntStream.rangeClosed(x, 10)
+ 	    .mapToObj( 	    y -> new double[] {x,y, Math.sqrt(x * x + y * y)})
+ 	    .filter (s -> s[2] % 1 == 0));
+ 	 
+	 	HackValue.limit(5).forEach(z-> System.out.println(z[0]+", " + " "+z[1] + " "+ z[2]));
+	 	//z[0] + "" ,"" + z[1] + "", "" + z[2]
+ 	   }
+ 	
+
 	}
 
-}
+

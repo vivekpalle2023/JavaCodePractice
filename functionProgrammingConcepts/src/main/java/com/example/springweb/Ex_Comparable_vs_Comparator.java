@@ -17,13 +17,15 @@ public class Ex_Comparable_vs_Comparator {
 		l.add(new Student("M",300,6));
 		
 		Comparator<Student> cm= (Student i, Student j) -> (i.rollNo>j.rollNo) ? 1:-1;
-		
+		//cm.reversed();
 		Collections.sort(l,cm);
 	
 		for(Student s: l) {
 		
 		System.out.println(s.studentName + " "+ s.rollNo+ " "+ s.age );
 		}
+		
+		
 		
 	}
 
