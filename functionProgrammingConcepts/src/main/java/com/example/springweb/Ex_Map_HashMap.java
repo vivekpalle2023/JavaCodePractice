@@ -1,6 +1,7 @@
 package com.example.springweb;
 
 import java.util.Map;
+import java.util.HashMap;
 import java.util.TreeMap;
 import java.util.Iterator;
 import java.util.List;
@@ -93,7 +94,7 @@ public class Ex_Map_HashMap {
 			}
 			
 		}
-		
+
 		employeeList().forEach(c->System.out.println(c.empId + " " + c.employeeName+ " " + c.baseShift));
 
 		// m.replace(1, "A");
@@ -105,6 +106,17 @@ public class Ex_Map_HashMap {
 		 * .forEach(System.out::println);
 		 */
 
+		
+		Map<Integer, String> h=new HashMap<Integer, String>();
+		h.put(1, "A");
+		h.put(1, "B");
+		h.put(1, "C");
+		System.out.println("ABC");
+		for(Map.Entry<Integer, String> s: h.entrySet())
+				{
+			System.out.println("ABC");
+		}
+		
 	}
 
 }
