@@ -9,25 +9,25 @@ import java.util.*;
 	import java.util.stream.Stream;
 
 
-class WorkDistribution{
-	
-	int mstCount;
-	int astCount;
-	int nstCount;
-	String month;
-	
-	WorkDistribution(int mstCount, int astCount,int nstCount,String month){
-		this.mstCount=mstCount;
-		this.astCount=astCount;
-		this.nstCount=nstCount;
-		this.month=month;
-	}
+	class WorkDistribution{
 		
-}
+		int mstCount;
+		int astCount;
+		int nstCount;
+		String month;
+		
+		WorkDistribution(int mstCount, int astCount,int nstCount,String month){
+			this.mstCount=mstCount;
+			this.astCount=astCount;
+			this.nstCount=nstCount;
+			this.month=month;
+		}
+			
+	}
 
 public class Ex_StreamAPI {
 	
-	@SuppressWarnings("unlikely-arg-type")
+
 	public static void main(String[] args) {
 		
 		List<WorkDistribution> wd=new ArrayList<>();
@@ -88,15 +88,17 @@ public class Ex_StreamAPI {
 		 
 		 
 		 //using sum in Array stream
-		 int[] a= {2,10,3,7,1,6};
+		 int[] a= {2,10,3,7,1,6,1,10};
 
    int total=Arrays.stream(a).sum();
-   	 for(int i=0;i<a.length;i++) {
-   		 a[i]=total-a[i];
-   	     }
-   	 for(int j:a) {
-   		System.out.println(j);
-   		    	 }
+	
+	 for (int i = 0; i < a.length; i++) { a[i] = total - a[i]; }
+	
+/*	 for(int i=0; i<total.length;i++) { System.out.println(total[i]); }
+	*/
+
+	  for(int j:a) { System.out.println(j); }
+	 
    	 
  	System.out.println( Arrays.stream(a).max());
 			
