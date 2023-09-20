@@ -16,6 +16,7 @@ public static void main(String[] args) {
 	
 	Function<String,Integer> function=(s)-> 10+s.length();
 	
+	//sending first 2 values as input
 	BiFunction<String,Integer,Integer> biFunction=(a,b) -> a.length() + b;
 	
 	//void return type, hence you cannot return any values
