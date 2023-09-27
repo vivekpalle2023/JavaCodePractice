@@ -7,6 +7,7 @@ public class MethodOverridingTestMain {
 		String s2=new String("Test");
 		System.out.println(s1==s2);
 		System.out.println(s1.equals(s2));
+		
 	}
 
 }

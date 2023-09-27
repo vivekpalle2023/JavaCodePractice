@@ -36,8 +36,7 @@ public class Ex_DateTimeAPI {
        System.out.println(d3);
        
        System.out.println(d.getDayOfMonth());
-       
-       
+              
        //To find Week Number -
        
        LocalDate date = LocalDate.now();  

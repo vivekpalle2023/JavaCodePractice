@@ -1,6 +1,7 @@
 package com.example.springweb.samples;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,7 +16,13 @@ public class Ex_ArrayList {
 		Arrays.stream(ar).map(o->d-o).forEach(System.out::println);
 		Arrays.stream(ar).filter(p->p>10).forEach(System.out::println);
 
+		List<String> fruits= Arrays.asList("Apple", "Papaya", "Mango","Watermelon");
         
+		//Arrays.stream(ar1).collect(Collectors.groupingBy(a->a.toLowerCase()));
+		
+		fruits.stream().filter(a->a.length()>5).forEach(System.out::println);
+		//.sorted().forEach(System.out::println);
+		
 
 		// List of Strings
 		List<String> l = new ArrayList<>();

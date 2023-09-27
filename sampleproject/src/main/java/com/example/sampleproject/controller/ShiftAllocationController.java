@@ -7,30 +7,37 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.sampleproject.model.ShiftDivision;
+import com.example.sampleproject.model.AnalystShiftAllocation;
+import com.example.sampleproject.model.ShiftPlannerDetails;
 import com.example.sampleproject.response.APIResponse;
-import com.example.sampleproject.service.ShiftPlannerService;
+import com.example.sampleproject.service.ShiftAllocationService;
+import com.example.sampleproject.model.AnalystsDetails;
+import java.util.HashMap;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/hello")
-public class ShiftDivisionController {
+public class ShiftAllocationController {
 	
 	@Autowired
-	ShiftPlannerService service;
+	ShiftAllocationService service;
 	
 		
-	@PostMapping("/GetDetails")
-	public ResponseEntity<APIResponse> getDetails(@RequestBody ShiftDivision s)
+	@PostMapping("/getcountofanalystsperShift")
+	public ResponseEntity<APIResponse> getCountOfAnalystsPerShift(@RequestBody AnalystShiftAllocation s)
 	{
-
-		String data= service.calculateNoAnalysts(s.getMorningShiftTicketCount(),
-													s.getAfterNoonShiftTicketCount(),
-													s.getNightShiftTicketCount(),
-													s.getNoOfAnalysts());
-	
+		Optional<ShiftPlannerDetails> data= Optional.ofNullable(service.getAnalystsCount(s));
 		APIResponse response=new APIResponse(201,data,"","Success");
-		
 		return ResponseEntity.ok(response);
+	}
+	
+	@PostMapping("/getshiftdetails")
+	public ResponseEntity<APIResponse> getShiftdetails(@RequestBody ShiftPlannerDetails s2)
+	{
+		HashMap<AnalystsDetails, String> hm=service.shiftAssignment(s2.getApacAnalystsCount(),
+				s2.getEocAnalystsCount(),s2.getAocAnalystsCount(),s2.getShiftDuration());
+		
+		return null;
 		
 	}
 	

@@ -1,29 +1,12 @@
 package com.example.sampleproject.model;
 
-public class ShiftDivision {
+public class AnalystShiftAllocation {
 	
-	private int morningShiftTicketCount;
-	private int afterNoonShiftTicketCount;
-	private int nightShiftTicketCount;
+	private int apacTickets;
+	private int eocTickets;
+	private int aocTickets;
 	private int noOfAnalysts;
-	public int getMorningShiftTicketCount() {
-		return morningShiftTicketCount;
-	}
-	public void setMorningShiftTicketCount(int morningShiftTicketCount) {
-		this.morningShiftTicketCount = morningShiftTicketCount;
-	}
-	public int getAfterNoonShiftTicketCount() {
-		return afterNoonShiftTicketCount;
-	}
-	public void setAfterNoonShiftTicketCount(int afterNoonShiftTicketCount) {
-		this.afterNoonShiftTicketCount = afterNoonShiftTicketCount;
-	}
-	public int getNightShiftTicketCount() {
-		return nightShiftTicketCount;
-	}
-	public void setNightShiftTicketCount(int nightShiftTicketCount) {
-		this.nightShiftTicketCount = nightShiftTicketCount;
-	}
+	
 	public int getNoOfAnalysts() {
 		return noOfAnalysts;
 	}
@@ -31,12 +14,30 @@ public class ShiftDivision {
 		this.noOfAnalysts = noOfAnalysts;
 	}
 	
-	public ShiftDivision(int morningShiftTicketCount,int afterNoonShiftTicketCount,int nightShiftTicketCount,int noOfAnalysts)
+	public AnalystShiftAllocation(int apacTickets,int eocTickets,int aocTickets,int noOfAnalysts)
 	{
-		this.morningShiftTicketCount=morningShiftTicketCount;
-		this.afterNoonShiftTicketCount=afterNoonShiftTicketCount;
-		this.nightShiftTicketCount=nightShiftTicketCount;
+		this.apacTickets=apacTickets;
+		this.eocTickets=eocTickets;
+		this.aocTickets=aocTickets;
 		this.noOfAnalysts=noOfAnalysts;
+	}
+	public int getApacTickets() {
+		return apacTickets;
+	}
+	public void setApacTickets(int apacTickets) {
+		this.apacTickets = apacTickets;
+	}
+	public int getEocTickets() {
+		return eocTickets;
+	}
+	public void setEocTickets(int eocTickets) {
+		this.eocTickets = eocTickets;
+	}
+	public int getAocTickets() {
+		return aocTickets;
+	}
+	public void setAocTickets(int aocTickets) {
+		this.aocTickets = aocTickets;
 	}
 
 }

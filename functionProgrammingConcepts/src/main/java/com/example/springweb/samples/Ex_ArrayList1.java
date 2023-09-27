@@ -1,7 +1,9 @@
 package com.example.springweb.samples;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 class Student implements Comparable<Student>{
@@ -50,8 +52,7 @@ public class Ex_ArrayList1 {
 		  +" with roll no "+ s.rollNo+ " is of Age "+ s.age); }
 		
 		//Collections.sort((List<T>) s1); //not working
-		
-	
+			
 		//Inserting at position 1
 		s1.add(1,new Student("B",101,7));
 		
@@ -72,7 +73,14 @@ public class Ex_ArrayList1 {
 		{System.out.println(a.studentName +" with roll no "+ a.rollNo+ " is of Age "+ a.age);});
 		}
 	
+		List<String> l=Arrays.asList("Vivek","Sree","Aariv","Ivan");
+		System.out.println(l.stream().collect(Collectors
+				.groupingBy(String::length, 
+						Collectors.filtering(s->!s.contains("V"), 
+						Collectors.toList()))));
 		
+	
+				
 	}
 
 }
