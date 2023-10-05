@@ -1,0 +1,39 @@
+package com.example.springweb.samples;
+
+interface A{
+	
+	public void show1();
+	
+}
+
+public class B{
+	public void show3()
+	{
+		System.out.println("B");
+	}
+}
+
+public class Upcasting_Sample extends B implements A  {
+	
+	public void show1() {
+		System.out.println("A");
+	}
+	
+	public void show2() {
+		System.out.println("Upcasting_Sample");
+	}
+	public void show3() {
+		System.out.println("Overridden method");
+	}
+
+	public static void main(String args[]) {
+		B obj=new Upcasting_Sample(); //up casting
+		obj.show3();
+		
+					
+		//Upcasting_Sample obj1=(Upcasting_Sample)obj; //down casting
+		//obj1.show2();
+		
+	}
+
+}

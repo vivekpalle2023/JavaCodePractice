@@ -1,0 +1,6 @@
+1694850736790	Rename package 'com.example.sampleproject.repository'
+1694850762013	Rename type 'ShiftDivisionRepository'
+1694865821868	Encapsulate field 'morningShiftTicketCount'
+1694865828034	Encapsulate field 'afterNoonShiftTicketCount'
+1694865833120	Encapsulate field 'nightShiftTicketCount'
+1694865837511	Encapsulate field 'noOfAnalysts'

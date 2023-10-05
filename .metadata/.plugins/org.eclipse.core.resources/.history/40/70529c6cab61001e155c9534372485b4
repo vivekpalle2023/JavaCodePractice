@@ -1,0 +1,28 @@
+package leetCode;
+
+
+public class LeatCodeEx2 {
+	
+	public static boolean isPalindrom(int num) {
+		
+		int temp=num;
+		int rev=0;
+		int q;
+		int rem;
+		while(temp >0) {
+			q=num/10;
+			rem=temp%10;
+			
+			
+		}
+		
+		return false;
+		
+	}
+	
+	public static void main(String[] args) {
+		LeatCodeEx2.isPalindrom(121);
+		
+	}
+  
+}

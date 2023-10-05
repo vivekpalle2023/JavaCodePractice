@@ -1,0 +1,40 @@
+package com.example.springweb.samples;
+
+import java.util.Arrays;
+
+class Product { double price; } 
+
+class Test { 
+public void updatePrice ( Product product , double price) 
+{ price = price * 2; product . price = product . price + price; } 
+
+public class Ex_ArrayList2 {
+
+	public static int[] removeTheElement(int[] arr, int index) {
+
+		int[] removedArrayOfNums = new int[arr.length-1];
+        
+		for (int i = 0,k=0; i < arr.length; i++) {
+			if (i == index) {continue;} 
+			else {removedArrayOfNums[k++] = arr[i];}
+		}
+		return removedArrayOfNums;
+	}
+
+	public static void main(String[] args) {
+
+		int[] arrayOfNums = { 25, 56, 21, 65, 92, 76 };
+		
+		arrayOfNums=Ex_ArrayList2.removeTheElement(arrayOfNums, 3);
+		
+		System.out.println(Arrays.toString(arrayOfNums));
+		
+		Product prt = new Product () ; 
+		prt.price = 200; 
+		double newPrice = 100; 
+		Test t = new Test () ; 
+		t. updatePrice ( prt, newPrice);
+		 System.out.println ( prt.price + " : " + newPrice); 
+	}
+}
+

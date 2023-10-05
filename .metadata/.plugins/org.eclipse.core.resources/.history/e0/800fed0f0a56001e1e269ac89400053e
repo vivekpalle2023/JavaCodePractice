@@ -1,0 +1,24 @@
+package com.example.springweb.samples;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ExecutorServiceExample {
+	public static void main(String[] args) {
+
+		// Example 1
+		// executorService object having pool of 10 threads
+		ExecutorService executorService = Executors.newFixedThreadPool(2);
+		
+		// performs a task using Runnable interface
+		executorService.execute(new Task(1));
+		executorService.execute(new Task(2));
+		executorService.shutdown();
+
+		// Example 2
+		// Create Single thread Execute service and execute
+
+		
+
+	}
+}

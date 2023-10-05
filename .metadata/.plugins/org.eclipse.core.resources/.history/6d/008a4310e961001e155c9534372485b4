@@ -1,0 +1,41 @@
+package com.example.springweb.samples;
+
+import java.time.LocalDate;
+import java.util.Arrays;
+
+
+
+public class Ex_ArrayList2 {
+
+	void x(int i) 
+	{ System.out.println("one"); } 
+
+	void x(String s){ System.out.println("two"); }
+
+	 void x(double d) { System.out.println("three"); } 
+	
+	public static int[] removeTheElement(int[] arr, int index) {
+
+		int[] removedArrayOfNums = new int[arr.length-1];
+        
+		for (int i = 0,k=0; i < arr.length; i++) {
+			if (i == index) {continue;} 
+			else {removedArrayOfNums[k++] = arr[i];}
+		}
+		return removedArrayOfNums;
+	}
+
+	public static void main(String[] args) {
+
+		int[] arrayOfNums = { 25, 56, 21, 65, 92, 76 };
+		
+		arrayOfNums=Ex_ArrayList2.removeTheElement(arrayOfNums, 3);
+		
+		System.out.println(Arrays.toString(arrayOfNums));
+		new Ex_ArrayList2 () .x (4.0);
+		
+	}
+}
+
+
+

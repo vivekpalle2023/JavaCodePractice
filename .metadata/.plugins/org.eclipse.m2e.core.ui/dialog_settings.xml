@@ -14,6 +14,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\v-vipall\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\AutoShiftPlanner\AutoShiftPlanner"/>
+			<item value="C:\Users\v-vipall\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\functionProgrammingConcepts\src\main\java\com\example\springweb\samples\Ex_ArrayList.java"/>
 			<item value="C:\Users\v-vipall\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\functionProgrammingConcepts\src\main\java\com\example\springweb\MethodOverridingTestMain.java"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -57,10 +59,13 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.wipro.sample"/>
 		</list>
 		<list key="name">
+			<item value="sbsample"/>
 		</list>
 		<list key="artifactId">
+			<item value="sbsample"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

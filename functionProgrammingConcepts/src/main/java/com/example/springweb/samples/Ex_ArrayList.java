@@ -9,26 +9,13 @@ import java.util.Iterator;
 
 public class Ex_ArrayList {
 
+	@SuppressWarnings("null")
 	public static void main(String args[]) {
-		
-		int[] ar= {2,10,25};
-		int d = Arrays.stream(ar).sum();
-		Arrays.stream(ar).map(o->d-o).forEach(System.out::println);
-		Arrays.stream(ar).filter(p->p>10).forEach(System.out::println);
-
-		List<String> fruits= Arrays.asList("Apple", "Papaya", "Mango","Watermelon");
-        
-		//Arrays.stream(ar1).collect(Collectors.groupingBy(a->a.toLowerCase()));
-		
-		fruits.stream().filter(a->a.length()>5).forEach(System.out::println);
-		//.sorted().forEach(System.out::println);
-		
 
 		// List of Strings
 		List<String> l = new ArrayList<>();
 		l.add("A");
 		l.add("B");
-
 		System.out.println(l);
 
 		// converting List to Array
@@ -36,14 +23,11 @@ public class Ex_ArrayList {
 		for (int j = 0; j < s.length; j++) {
 			System.out.println(s[j]);
 		}
-
 		// Array of Strings
 		String[] a = { "C", "D" };
-
-	
-		List<String> c = Arrays.asList(a); 
+		List<String> c = Arrays.asList(a);
 		System.out.println(c);
-		
+
 		// Convert Array of String to List
 		List<String> b = new ArrayList<>();
 
@@ -52,7 +36,7 @@ public class Ex_ArrayList {
 			b.add(a[j]);
 		}
 		// clear all the elements
-		//b.clear();
+		// b.clear();
 		// adding the elements from another ArrayList
 		b.addAll(l);
 
@@ -64,6 +48,30 @@ public class Ex_ArrayList {
 
 		}
 
+		int[] ar = { 2, 10, 25 };
+		int d = Arrays.stream(ar).sum();
+		Arrays.stream(ar).map(o -> d - o).forEach(System.out::println);
+		Arrays.stream(ar).filter(p -> p > 10).forEach(System.out::println);
+
+		List<String> fruits = Arrays.asList("Apple", "Papaya", "Mango", "Watermelon");
+
+		// Arrays.stream(ar1).collect(Collectors.groupingBy(a->a.toLowerCase()));
+
+		fruits.stream().filter(a1 -> a1.length() > 5).forEach(System.out::println);
+		// .sorted().forEach(System.out::println);
+
+		String name = "vivekpalle";
+
+		char[] name1 = name.toCharArray();
+        
+		StringBuilder sb = new StringBuilder();
+
+		for (int j = (name1.length) - 1; j >= 0; j--) {
+			if(name1[j]==name1[j-1])
+			sb.append(name1[j]);
+		}
+		System.out.println(sb.toString());
+      
 	}
 
 }

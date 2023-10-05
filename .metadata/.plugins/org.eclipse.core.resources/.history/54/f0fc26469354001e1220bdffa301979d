@@ -1,0 +1,29 @@
+package com.example.sampleproject.service;
+
+
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class ShiftPlannerService {
+	
+
+	
+	public String calculateNoAnalysts(int morningShiftTicketCount, int afterNoonShiftTicketCount, int nightShiftTicketCount, int noOfAnalysts)
+	{		
+
+				 int totalTickets=morningShiftTicketCount+afterNoonShiftTicketCount+nightShiftTicketCount;
+				 float perAnalystTickets= totalTickets/noOfAnalysts;
+				 
+				 int morningShiftAnalysts=(int) (morningShiftTicketCount/perAnalystTickets);
+				 int afterNoonShiftAnalysts=(int) (afterNoonShiftTicketCount/perAnalystTickets);
+				 int nightShiftAnalysts=(int) (afterNoonShiftTicketCount/perAnalystTickets);
+				return "Morning Shift Analysts: " + morningShiftAnalysts +
+						" After Noon Shift Analysts " + afterNoonShiftAnalysts +
+						" Night Shift Analysts " + nightShiftAnalysts;
+				
+	}
+	
+	
+
+}

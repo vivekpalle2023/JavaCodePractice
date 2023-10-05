@@ -1,0 +1,44 @@
+package com.example.springweb.samples;
+
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+class CallableTasks implements Callable<String>{
+
+	String name;
+	public CallableTasks(String name)
+	{		this.name=name;			}
+	
+	@Override
+	public String call() throws Exception {
+		Thread.sleep(2000);
+		return "Hello "+name;
+	}
+	
+}
+
+public class MultipleCallableRunner {
+	public static void main(String[] args) throws InterruptedException, ExecutionException {
+		
+		ExecutorService e2=Executors.newFixedThreadPool(4);
+		List<CallableTasks> t2=
+		List.of(new CallableTasks("Aariv"), 
+				new CallableTasks("Vivek"),
+				new CallableTasks("Sreelekha"),
+				new CallableTasks("Palle"));
+		
+		List<Future<String>> results=e2.invokeAll(t2);
+		
+		//only after all the tasks processed then only it will be printed. 
+		for(Future<String> result: results)
+		{
+			System.out.println(result.get());
+		}
+		e2.shutdown();
+	}
+
+}

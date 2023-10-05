@@ -1,0 +1,17 @@
+package com.example.springweb.samples;
+
+public class LeatCodeEx1 {
+	
+	public static int[] twoSum(int[] nums, int target) {
+		return nums;
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		int[] a = { 2, 7, 11, 15 };
+		int[] b = LeatCodeEx1.twoSum(a, 9);
+		
+	}
+
+}

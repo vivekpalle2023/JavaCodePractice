@@ -40,9 +40,9 @@ public class Ex_Map_HashMap {
 		return l;
 
 	}
-	
+
 	static Map<Integer, Employees> randomEmployeeMapping() {
-		
+
 		Map<Integer, Employees> m = new TreeMap<Integer, Employees>();
 		Iterator<Employees> i = employeeList().iterator();
 		int p = 0;
@@ -61,41 +61,38 @@ public class Ex_Map_HashMap {
 
 	public static void main(String[] args) {
 
-	
-		int mse=2;
-		int ase=2;
-		int nse=2;
+		int mse = 2;
+		int ase = 2;
+		int nse = 2;
 		// Entry is a sub interface of HashMap which has getKey() and getValue() methods
 		// need to convert to Set using the entrySet() method
 		// passing the set value to Entry to traverse and retrieve key and value
 		// separately
-	
+
 		for (Map.Entry<Integer, Employees> s : randomEmployeeMapping().entrySet()) {
 			Employees e = s.getValue();
-		        if(mse!=0) {
-				e.baseShift="Morning";
-			
+			if (mse != 0) {
+				e.baseShift = "Morning";
+
 				mse--;
-		        }
-		        else if(ase!=0) {
-		        	e.baseShift="Afternoon";
-		        	ase--;
-		        }
-		        else if(nse!=0) {
-		        	e.baseShift="Night";
-		        	nse--;
-		        }
+			} else if (ase != 0) {
+				e.baseShift = "Afternoon";
+				ase--;
+			} else if (nse != 0) {
+				e.baseShift = "Night";
+				nse--;
+			}
 			System.out.println(s.getKey() + " = " + e.empId + " - " + e.employeeName + " - " + e.baseShift + " Shift");
-			
-			for(int i=0;i<employeeList().size();i++) {
-			if (employeeList().get(i).empId ==e.empId) {
-				employeeList().set(i, new Employees(e.empId,e.employeeName,e.baseShift));
+
+			for (int i = 0; i < employeeList().size(); i++) {
+				if (employeeList().get(i).empId == e.empId) {
+					employeeList().set(i, new Employees(e.empId, e.employeeName, e.baseShift));
+				}
 			}
-			}
-			
+
 		}
 
-		employeeList().forEach(c->System.out.println(c.empId + " " + c.employeeName+ " " + c.baseShift));
+		employeeList().forEach(c -> System.out.println(c.empId + " " + c.employeeName + " " + c.baseShift));
 
 		// m.replace(1, "A");
 		// m.replaceAll((k,v)->"V");
@@ -105,10 +102,25 @@ public class Ex_Map_HashMap {
 		 * .sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
 		 * .forEach(System.out::println);
 		 */
+		int[] a = { 2, 7, 11, 15 };
+		int[] b = Ex_Map_HashMap.twoSum(a, 9);
+		for (int b1 : b) {
+			System.out.println(b1);
+		}
+	}
 
-		
+	public static int[] twoSum(int[] nums, int target) {
 
-		
+		for (int i = 0; i < nums.length; i++) {
+
+			for (int j = 0; j < nums.length; j++) {
+				if (target == (nums[i] + nums[j]) && i != j) {
+					return new int[] { i, j };
+				}
+
+			}
+		}
+		return new int[] {};
 	}
 
 }

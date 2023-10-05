@@ -1,0 +1,65 @@
+package leetCode;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.ListIterator;
+
+
+public class LeatCodeEx2 {
+	
+	public static boolean isPalindrom(int num) {
+		
+		int temp=num, rev=0, q=0, rem=0;
+		while(temp >0) {
+			q=temp/10;
+			rem=temp%10;
+			rev= rev*10+rem;
+			temp=q;			
+		}
+		if(num==rev) {return true;}else {return false;}
+	}
+	
+	public static ArrayList<Integer> reverseArrayList(ArrayList<Integer> l1){
+		
+		int temp1=0;
+		for(int i=0;i<(l1.size()/2);i++) {
+			
+		temp1=l1.get(i);
+		
+		l1.set(i, l1.get(l1.size()-i-1));
+		l1.set(l1.size()-i-1, temp1);
+			
+		}
+		return l1;
+		
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(LeatCodeEx2.isPalindrom(64646));
+		
+		ArrayList<Integer> l1=new ArrayList<>(); 
+		l1.add(21);
+		l1.add(10);
+        l1.add(91);
+        l1.add(56);
+       // l1.add(12);
+        System.out.println(l1);
+        
+        //Method 1 to reverse
+        Collections.reverse(l1);
+        System.out.println(l1);
+
+        //Method 2 to reverse
+		System.out.println(LeatCodeEx2.reverseArrayList(l1));
+		
+		//shuffle the list
+		Collections.shuffle(l1); System.out.println(l1);
+		
+		 //Method 3 to reverse
+		ListIterator<Integer> li=l1.listIterator(l1.size());
+				while(li.hasPrevious())
+		{System.out.println(li.previous());}
+		
+	}
+  
+}
